@@ -16,7 +16,7 @@ export default async function ReadPage({ query }) {
 
   return (
     <>
-      <div className="alert alert-success">更新しました</div>
+      <div className="alert alert-success">更新しました!!</div>
       <div className="card bordered bg-white border-blue-200 border-2 max-w-sm m-4">
         <OneCustomerInfoCard {...customerInfo[0]} />
       </div>

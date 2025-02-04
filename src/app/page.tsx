@@ -51,6 +51,11 @@ export default function Home() {
                   Delete
                 </button>
               </Link>
+              <Link href={`/customers/sales/${customerInfo.customer_id}`}>
+                <button className="btn btn-neutral w-20 border-0 bg-blue-200 text-black hover:text-white">
+                  Sales
+                </button>
+              </Link>
             </div>
           </div>
         ))}
