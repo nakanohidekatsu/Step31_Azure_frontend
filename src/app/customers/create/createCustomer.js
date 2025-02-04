@@ -14,7 +14,9 @@ const createCustomer = async (formData) => {
       gender: creating_gender,
     });
 
-    const res = await fetch(`http://localhost:8000/customers`, {
+    //const res = await fetch(`http://localhost:8000/customers`, {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/customers`,{
+      
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: body_msg,
