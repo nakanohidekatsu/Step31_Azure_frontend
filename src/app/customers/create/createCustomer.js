@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 
 const createCustomer = async (formData) => {
     const creating_customer_name = formData.get("customer_name");
