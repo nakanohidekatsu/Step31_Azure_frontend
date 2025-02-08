@@ -1,5 +1,5 @@
 'use client';
-import Image from "next/image";
+// import Image from "next/image";
 import OneCustomerInfoCard from "@/app/components/one_customer_info_card.jsx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
