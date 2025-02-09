@@ -1,11 +1,12 @@
 "use client";
+import React, { Suspense, useEffect, useState } from "react";
 import OneCustomerInfoCard from "@/app/components/one_customer_info_card.jsx";
 import fetchCustomer from "./fetchCustomer";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
-export default function ConfirmPage() {
+function ConfirmPageContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const customer_id = useSearchParams().get("customer_id");
   const [customer, setCustomer] = useState(null);
 
@@ -18,8 +19,10 @@ export default function ConfirmPage() {
       const customerData = await fetchCustomer(customer_id);
       setCustomer(customerData);
     };
-    fetchAndSetCustomer();
-  }, []);
+    if (customer_id) {
+      fetchAndSetCustomer();
+    }
+  }, [customer_id]);
 
   return (
     <>
@@ -33,5 +36,14 @@ export default function ConfirmPage() {
         </button>
       </div>
     </>
+  );
+}
+
+// ページコンポーネントで Suspense 境界を設定
+export default function ConfirmPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConfirmPageContent />
+    </Suspense>
   );
 }
