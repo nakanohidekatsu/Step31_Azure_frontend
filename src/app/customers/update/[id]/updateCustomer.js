@@ -12,7 +12,7 @@ export default async function updateCustomer(formData) {
   });
 
   //const res = await fetch(`http://localhost:8000/customers`, {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `customers`, {
+  const res = await fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/customers`, {
       method: "PUT",
     headers: {
       "Content-Type": "application/json",
