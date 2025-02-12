@@ -2,7 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-
   "engines": {
     "node": "18.x"
   },
@@ -17,7 +16,7 @@
   },
   "dependencies": {
     "daisyui": "^4.12.23",
-    "next": "15.1.5",
+    "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
