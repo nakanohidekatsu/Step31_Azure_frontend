@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "npm-run-all --parallel next-start custom-server",
+    "next-start": "next start",
+    "custom-server": "node server.js",
     "lint": "next lint"
   },
   "dependencies": {
