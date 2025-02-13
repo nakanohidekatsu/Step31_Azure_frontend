@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "npm-run-all --parallel next-start custom-server",
-    "next-start": "next start",
+    "start": "node server.js",
     "startAzure": "./node_modules/next/dist/bin/next start",
     "custom-server": "node server.js",
     "lint": "next lint"
