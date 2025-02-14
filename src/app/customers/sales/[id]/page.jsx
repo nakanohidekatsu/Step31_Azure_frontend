@@ -96,7 +96,7 @@ export default function SalesPage(props) {
 
   useEffect(() => {
     // 業種大分類データを取得
-    fetch("http://localhost:8000/industries")
+    fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + "/industries")
       .then((res) => res.json())
       .then((data) => setCategories(data.categories))
       .catch((error) => console.error("Error fetching categories:", error));
@@ -108,7 +108,7 @@ export default function SalesPage(props) {
     setSelectedSubCategory(""); // 業種中分類をリセット
 
     // 業種中分類データを取得
-    fetch(`http://localhost:8000/sub-industries/${category}`)
+    fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/sub-industries/${category}`)
       .then((res) => res.json())
       .then((data) => setSubCategories(data.sub_categories))
       .catch((error) => console.error("Error fetching subcategories:", error));
@@ -116,7 +116,7 @@ export default function SalesPage(props) {
 
   useEffect(() => {
     // 県データを取得
-    fetch("http://localhost:8000/ken")
+    fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + "/ken")
       .then((res) => res.json())
       .then((data) => setkens(data.kens))
       .catch((error) => console.error("Error fetching ken:", error));
@@ -128,7 +128,7 @@ export default function SalesPage(props) {
     setSelectedCity(""); // 市をリセット
 
     // 市データを取得
-    fetch(`http://localhost:8000/cities/${ken}`)
+    fetch(process.env.NEXT_PUBLIC_API_ENDPOINT + `/cities/${ken}`)
       .then((res) => res.json())
       .then((data) => setCities(data.cities))
       .catch((error) => console.error("Error fetching Cities:", error));
